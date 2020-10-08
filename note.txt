@@ -1,0 +1,35 @@
+service 
+
+    admin
+    [x] - login admin
+    [x] - crud product(kebutuhan petani)
+    [x]  - crud data petani
+        -> admin only
+        ==============
+        crud
+
+    []  - crud pengumuman'
+     x   -> crud admin only
+        -> read user only
+
+    [x]  - pengaturan
+        -> user only
+    
+    [-]  - pemesanan kebutuhan petani
+        -> user konfirm admin
+            -> user membeli kebutuhan
+            -> masuk ke keranjang
+            -> user mengupload struck
+            -> admin mendapatkan notif kalau si A sudah membayar
+            -> admin konfirm pengiriman ke pembeli
+            -> user mendapatkan notif jika barang sudah terkirim
+            
+    []  - daftar penjualan
+            -> user megisi form jual tobaco
+            -> admin mengonfonfirmasi laku dan tidak laku(alasan)
+            
+    []  - hasil penjualan
+            -> user / admin dapat melihat ini
+    []  - riwayat penjualan
+            -> user / admin dapat melihat ini
+    

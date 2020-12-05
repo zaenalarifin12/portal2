@@ -67,19 +67,38 @@
                             <label for="">Great</label><br>
                             @foreach ($greate as $item)
                               <input type="checkbox" name="greate[]" value="{{ $item->id }}"> {{$item->nama}} 
-                              <input type="number" class="form-control" name="bobot[]" />
+                              <div class="row">
+                                <div class="col">
+                                  <input type="number" class="form-control" placeholder="bal" name="bal[]" />
+                                </div>
+                                <div class="col">
+                                  <input type="number" class="form-control" placeholder="bobot" name="bobot[]" />
+                                </div>
+                                <div class="col">
+                                  <input type="number" class="form-control" placeholder="harga/kg" name="harga[]" />
+                                </div>
+                              </div>
                             <br>
                             @endforeach
                             
                         </div>
 
                         <div class="form-group">
-                            <label for="">bobot tidak laku</label>
+                            <label for="">tidak laku</label>
                             <input type="number" class="form-control" name="bobot_tidak_laku" id="">
                             <label for="">Alasan tidak laku</label>
-                            <textarea class="form-control" name="alasan" id="" cols="30" rows="10"
-                            style="  height: 100px !important;"
-                            ></textarea>
+                            <select name="alasan" id="" class="form-control">
+                              <option value="null">Tidak Ada </option>
+                              <option value="Basah">Basah </option>
+                              <option value="Jamur">Jamur</option>
+                              <option value="Terlalu Kering">Terlalu Kering</option>
+                              <option value="Plastik">Plastik</option>
+                              <option value="Mik">Mik</option>
+                              <option value="Hijau">Hijau </option>
+                              <option value="Putung rokok">Putung rokok</option>
+                              <option value="Bahan Metal">Bahan Metal </option>
+
+                            </select>
                         </div>
                         <br>
                         <input type="submit" class="btn btn-primary float-right" value="Proses" />

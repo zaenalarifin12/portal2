@@ -8,12 +8,14 @@ Auth::routes();
 
 Route::group(["middleware" => ["auth"]], function(){
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/informasi', 'InformasiController@index');
     Route::resource('/petani',           'UserController');
     Route::resource('/data-petani',      'DataPetaniController');
     Route::resource('/products',         'ProductController');
     Route::resource('/carts',            'CartController');
 
     Route::get('/pembelian',         'PembelianController@index');
+    Route::post('/pembelian',         'PembelianController@store');
 
     Route::resource('daftar-penjualan',                             'DaftarPenjualanController');
     Route::resource('daftar-penjualan.hasil-penjualan',             'HasilPenjualanController');
@@ -30,6 +32,10 @@ Route::group(["middleware" => ["auth"]], function(){
     Route::get('/pengaturan',           'PengaturanController@show');
     Route::get('/pengaturan/edit',      'PengaturanController@edit');
     Route::put('/pengaturan',           'PengaturanController@update');
+
+
+    //======== API ===================
+    Route::get('/api/produk/{id}',           'Api\ProdukController@show');
 });
 //super admin => fitur extra tambah admin
 

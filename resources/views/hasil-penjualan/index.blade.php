@@ -13,7 +13,7 @@
     <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <h1>Daftar Penjualan</h1>
+            <h1>Hasil Penjualan</h1>
       
           </div>
 
@@ -23,7 +23,7 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4>Daftar Penjualan</h4>
+                    <h4>Hasil Penjualan</h4>
                     
                     @empty($daftar_penjualan->count())
                         <a href="{{ url("daftar-penjualan/create") }}" class="btn btn-outline btn-success">Jual Tembakau Saya</a>    
@@ -65,9 +65,9 @@
 
                                     @foreach ($item->laku as $item2)
                                         @php
-                                            $hasil_sementara = $item2->bobot_laku * $item2->greate->harga;
-                                            $hasil += $hasil_sementara;
+                                            $hasil += $item2->harga
                                         @endphp
+                                        
                                     @endforeach
                                         Rp . {{ $hasil }}
                                     </td>

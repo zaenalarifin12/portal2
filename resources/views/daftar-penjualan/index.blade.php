@@ -25,9 +25,7 @@
                   <div class="card-header">
                     <h4>Daftar Penjualan</h4>
                     
-                    @empty($daftar_penjualan->count())
                         <a href="{{ url("daftar-penjualan/create") }}" class="btn btn-outline btn-success">Jual Tembakau Saya</a>    
-                    @endempty
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">

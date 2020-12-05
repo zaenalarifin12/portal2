@@ -9,6 +9,7 @@
       <ul class="sidebar-menu">
        
         <li><a class="nav-link" href="{{ url("/") }}"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+        <li><a class="nav-link" href="{{ url("/informasi") }}"><i class="fa fa-home"></i> <span>Informasi</span></a></li>
         <li><a class="nav-link" href="{{ url("/data-petani") }}"><i class="fa fa-user"></i><span><b>Data Petani</b></span></a></li>
         @if (Auth::user()->role == 1)
           <li><a class="nav-link" href="{{ url("/products") }}"><i class="fa fa-product-info"></i><span><b>Informasi</b></span></a></li>
@@ -19,7 +20,7 @@
         
         <li><a class="nav-link" href="{{ url("/pembelian") }}"><i class="far fa-briefcase"></i> <span>Pembelian Kebutuhan Petani</span></a></li>
         
-        <li><a class="nav-link" href="{{ url("/orders") }}"><i class="fa fa-cart-arrow-down  "></i> <span>Keranjang</span></a></li>
+        {{-- <li><a class="nav-link" href="{{ url("/orders") }}"><i class="fa fa-cart-arrow-down  "></i> <span>Keranjang</span></a></li> --}}
 
         <li><a class="nav-link" href="{{ url("/daftar-penjualan") }}"><i class="far fa-product-hunt "></i><span>Daftar Penjualan</span></a></li>
         <li><a class="nav-link" href="{{ url("/hasil-penjualan") }}"><i class="far fa-product-hunt "></i><span>Hasil Penjualan</span></a></li>

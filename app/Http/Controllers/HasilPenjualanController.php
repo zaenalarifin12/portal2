@@ -38,16 +38,13 @@ class HasilPenjualanController extends Controller
         $greate = Greate::get();
         $daftar = DaftarPenjualan::with("user")->findOrFail($id);
 
-        if($daftar->jumlah_bal != (array_sum($request->bobot) + $request->bobot_tidak_laku ) ){
-            return back()->withErrors("jumlah bal dan bobot tidak sama , silahkan dicheck kembali");
-        }
-        
-        
         // isi jumlah yang laku
         for ($i=0; $i < count($request->greate); $i++) { 
             HasilPenjualanLaku::create([
+                "bal_laku"              => $request->bal[$i], 
                 "bobot_laku"            => $request->bobot[$i], 
-                "great_id"              => $request->greate[$i], 
+                "harga"                 => $request->harga[$i], 
+                "greate_id"              => $request->greate[$i], 
                 "daftar_penjualan_id"   => $daftar->id, 
             ]);
         }
@@ -58,7 +55,8 @@ class HasilPenjualanController extends Controller
                 "alasan"            => $request->alasan,
             ]);
         }
-        
+
+
         
         return redirect("/hasil-penjualan")->withSuccess("hasil penjualan berhasil diproses");
     }
